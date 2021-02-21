@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Card from './Card';
+import './CardDeck.css';
+
+
 const API_BASE_URL = 'https://deckofcardsapi.com/api/deck';
 
-export class CardDeck extends Component {
+class CardDeck extends Component {
     constructor(props){
         super(props);
 
@@ -49,11 +52,11 @@ export class CardDeck extends Component {
         ));
         return (
             <div>
-                {cards}
                 <button onClick={this.drawCard}>Draw Card</button>
+                <div className="Card-Container" >{cards}</div>
             </div>
         )
     }
 }
 
-export default CardDeck
+export default CardDeck;
